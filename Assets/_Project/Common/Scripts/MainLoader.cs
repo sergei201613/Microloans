@@ -8,6 +8,8 @@ namespace Sgorey.Microloans.Common
 {
     public class MainLoader : MonoBehaviour
     {
+        private const string IsRUKey = "RU";
+
         [SerializeField]
         private GameObject _loadingScreen;
         
@@ -17,22 +19,32 @@ namespace Sgorey.Microloans.Common
         [SerializeField]
         private AssetReference _serverData;
 
+        public static bool IsRuLang()
+        {
+            return false;
+            return PlayerPrefs.GetInt(IsRUKey) == 1;
+        }
+
         private void Awake()
         {
-            
             if (_shouldCheckLang)
             {
-                if (Application.systemLanguage != SystemLanguage.Russian)
-                    return;
-
-                if (CultureInfo.CurrentCulture.ToString() != "ru-RU")
-                    return;
+                if (NeedUpdateLangInfo())
+                    UpateLanguageInfo();
             }
 
-            AsyncOperationHandle handle = _serverData.LoadAssetAsync<GameObject>();
-            handle.Completed += Handle_Completed;
-            
-            _loadingScreen.SetActive(true);
+            if (IsRuLang())
+            {
+                AsyncOperationHandle handle = _serverData.LoadAssetAsync<GameObject>();
+                handle.Completed += Handle_Completed;
+
+                _loadingScreen.SetActive(true);
+            }
+        }
+
+        private static bool NeedUpdateLangInfo()
+        {
+            return !PlayerPrefs.HasKey(IsRUKey);
         }
 
         private void Handle_Completed(AsyncOperationHandle obj)
@@ -55,6 +67,21 @@ namespace Sgorey.Microloans.Common
             {
                 Debug.LogError($"AssetReference {_serverData.RuntimeKey} failed to load.");
             }
+        }
+
+        private void UpateLanguageInfo()
+        {
+            if (Application.systemLanguage != SystemLanguage.Russian)
+            {
+                PlayerPrefs.SetInt(IsRUKey, 0);
+            }
+
+            if (CultureInfo.CurrentCulture.ToString() != "ru-RU")
+            {
+                PlayerPrefs.SetInt(IsRUKey, 0);
+            }
+
+            PlayerPrefs.SetInt(IsRUKey, 1);
         }
     }
 }

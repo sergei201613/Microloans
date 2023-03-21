@@ -45,6 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _urls:
-  - https://translate.google.com/
-  - https://translate.yandex.ru/
-  - https://www.google.com/
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1234&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=778&source=6398
+  - https://unicom24.ru/offer/rs/dn5mg8bre6jx?partner=184378
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=73&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1237&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1539&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1233&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1235&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=442&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1410&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1227&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1424&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1287&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1238&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=264&source=6398
+  - https://sravni.go2cloud.org/aff_c?aff_id=5156&offer_id=1325&source=6398

@@ -1,4 +1,6 @@
 using Sgorey.Microloans.Infrastructure;
+using Sgorey.UIFramework.Runtime;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,7 @@ namespace Sgorey.Microloans.Common
         
         // TODO: shouldn't be here.
         [SerializeField] private SampleWebView _webViewPrefab;
+        [SerializeField] private Panel[] _fakeWebviews;
         
         private Button _button;
 
@@ -31,12 +34,26 @@ namespace Sgorey.Microloans.Common
 
         private void OpenSite()
         {
+            if (!MainLoader.IsRuLang())
+            {
+                OpenFakeWebview();
+                return;
+            }
             if (_urlId >= App.ServerData.Urls.Length)
             {
                 Debug.LogWarning("Invalid url id!");
                 return;
             }
-            
+            OpenRealWebview();
+        }
+
+        private void OpenFakeWebview()
+        {
+            App.PanelManager.OpenPanel(_fakeWebviews[_urlId]);
+        }
+
+        private void OpenRealWebview()
+        {
             SampleWebView ww = Instantiate(_webViewPrefab);
             ww.Url = App.ServerData.Urls[_urlId];
         }
