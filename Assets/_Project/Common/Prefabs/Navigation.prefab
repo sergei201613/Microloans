@@ -48,6 +48,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5991441126968884825}
   - component: {fileID: 5991441126968884824}
+  - component: {fileID: 626223738709029498}
   m_Layer: 5
   m_Name: ButtonsContainer
   m_TagString: Untagged
@@ -104,6 +105,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &626223738709029498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991441126968884822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1001 &4931005448710022552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +239,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5991441126968884825}
     m_Modifications:
+    - target: {fileID: 2431429950987747083, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Color.b
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431429950987747083, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431429950987747083, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Color.r
+      value: 0.43529412
+      objectReference: {fileID: 0}
     - target: {fileID: 4135200825468064116, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -309,9 +335,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249591855945611896, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249591855945611896, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 626223738709029498}
     - target: {fileID: 7794471267911583131, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_Name
       value: NavigationButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387453086866142527, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: _panelToOpen
+      value: 
+      objectReference: {fileID: 480926480138925937, guid: d211e5b4908388243be16d2a3b13a13c, type: 3}
+    - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283017583
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
@@ -415,10 +469,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249591855945611896, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 626223738709029498}
     - target: {fileID: 7794471267911583131, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_Name
       value: NavigationButton_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8387453086866142527, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: _panelToOpen
+      value: 
+      objectReference: {fileID: 743556322947703336, guid: 579b48534a0e76e419545a5c5e02c625, type: 3}
     - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_text
       value: "\u0418\u0437\u0431\u0440\u0430\u043D\u043D\u043E\u0435"
@@ -525,10 +587,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249591855945611896, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 626223738709029498}
     - target: {fileID: 7794471267911583131, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_Name
       value: NavigationButton_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8387453086866142527, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
+      propertyPath: _panelToOpen
+      value: 
+      objectReference: {fileID: 1426589874951481707, guid: a59cfb62f8ffd67478a0af0e9bd9a783, type: 3}
     - target: {fileID: 8807268262595373445, guid: 32f4a413fd052bd46b0c8c768608d429, type: 3}
       propertyPath: m_text
       value: "\u041A\u0430\u043B\u044C\u043A\u0443\u043B\u044F\u0442\u043E\u0440"
