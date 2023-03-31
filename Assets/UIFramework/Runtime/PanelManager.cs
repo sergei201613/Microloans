@@ -1,10 +1,11 @@
+using Sgorey.Microloans.Infrastructure;
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Sgorey.UIFramework.Runtime
 {
-	public class PanelManager : MonoBehaviour
+	public class PanelManager : MonoBehaviour, IService
 	{
 		public Panel CurrentPanel => _currPanel;
 
@@ -17,13 +18,20 @@ namespace Sgorey.UIFramework.Runtime
 
 		private void Awake()
 		{
+			ServiceContainer.RegisterShared(this);
+
 			if (_initialPanelPrefab)
 			{
 				OpenPanel(_initialPanelPrefab);
 			}
 		}
 
-		public T OpenPanel<T>(T prefab) where T : Panel
+        private void OnDestroy()
+        {
+			ServiceContainer.UnregisterShared<PanelManager>();
+        }
+
+        public T OpenPanel<T>(T prefab) where T : Panel
 		{
 			Assert.IsNotNull(prefab);
 

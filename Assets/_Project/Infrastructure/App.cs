@@ -1,19 +1,16 @@
 using Sgorey.Microloans.Common;
-using Sgorey.UIFramework.Runtime;
 using UnityEngine;
 
 namespace Sgorey.Microloans.Infrastructure
 {
     public class App
     {
-        public static readonly PanelManager PanelManager;
-
-        // TODO: shit code, because not readonly.
         public static ServerData ServerData;
+        public static FakeWebviewsCanvas FakeWebview;
 
-        static App()
+        public App()
         {
-            PanelManager = Object.FindObjectOfType<PanelManager>();
+            Application.targetFrameRate = 60;
         }
     }
 }

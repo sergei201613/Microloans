@@ -1,6 +1,5 @@
 using Sgorey.Microloans.Infrastructure;
 using Sgorey.UIFramework.Runtime;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,7 @@ namespace Sgorey.Microloans.Common
     [RequireComponent(typeof(Button))]
     public class OpenMicroloansSiteButton : MonoBehaviour
     {
-        [SerializeField] private int _urlId = 0;
+        [SerializeField] private BankInfoPanel _bankInfoPanel;
         
         // TODO: shouldn't be here.
         [SerializeField] private SampleWebView _webViewPrefab;
@@ -39,7 +38,7 @@ namespace Sgorey.Microloans.Common
                 OpenFakeWebview();
                 return;
             }
-            if (_urlId >= App.ServerData.Urls.Length)
+            if (_bankInfoPanel.ID >= App.ServerData.Urls.Length)
             {
                 Debug.LogWarning("Invalid url id!");
                 return;
@@ -49,13 +48,13 @@ namespace Sgorey.Microloans.Common
 
         private void OpenFakeWebview()
         {
-            App.PanelManager.OpenPanel(_fakeWebviews[_urlId]);
+            App.FakeWebview.SetActiveView(_bankInfoPanel.ID);
         }
 
         private void OpenRealWebview()
         {
             SampleWebView ww = Instantiate(_webViewPrefab);
-            ww.Url = App.ServerData.Urls[_urlId];
+            ww.Url = App.ServerData.Urls[_bankInfoPanel.ID];
         }
     }
 }

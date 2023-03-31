@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 6320537684582804999}
   - component: {fileID: 2123523390041808849}
   - component: {fileID: 6343396949530591226}
-  - component: {fileID: 7609981731413630629}
+  - component: {fileID: 390517740128749802}
   m_Layer: 5
   m_Name: Heart Button
   m_TagString: Untagged
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7609981731413630629
+--- !u!114 &390517740128749802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1689,7 +1689,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759c7332b2f86a94ea4415250108e418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _titleText: {fileID: 1962330403841456415}
+  _heartButton: {fileID: 390517740128749802}
+  _heartButtonImage: {fileID: 6343396949530591226}
+  _heartOffSprite: {fileID: 21300000, guid: 5d68158c3777778469c88690f1bdca86, type: 3}
+  _heartOnSprite: {fileID: 21300000, guid: eedb1d18219db704a976f6d0c5c8dab9, type: 3}
 --- !u!1 &8187944642264399615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2437501cdcd4871be32c31624339e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _urlId: 0
+  _bankInfoPanel: {fileID: 9023487050377782112}
   _webViewPrefab: {fileID: 938691177, guid: 1a4c0158047d340519e2cd16cb113d84, type: 3}
   _fakeWebviews:
   - {fileID: 0}

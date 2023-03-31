@@ -19,12 +19,6 @@ namespace Sgorey.Microloans.Common
         [SerializeField]
         private AssetReference _serverData;
 
-        public static bool IsRuLang()
-        {
-            return false;
-            return PlayerPrefs.GetInt(IsRUKey) == 1;
-        }
-
         private void Awake()
         {
             if (_shouldCheckLang)
@@ -40,6 +34,14 @@ namespace Sgorey.Microloans.Common
 
                 _loadingScreen.SetActive(true);
             }
+        }
+
+        public static bool IsRuLang()
+        {
+            // TODO: remove this test thing
+            return false;
+
+            return PlayerPrefs.GetInt(IsRUKey) == 1;
         }
 
         private static bool NeedUpdateLangInfo()
@@ -59,8 +61,6 @@ namespace Sgorey.Microloans.Common
                     return;
                 
                 var data = dataObj.GetComponent<ServerData>();
-                
-                // TODO: shit code.
                 App.ServerData = data;
             }
             else

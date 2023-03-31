@@ -1,3 +1,4 @@
+using Sgorey.Microloans.Infrastructure;
 using Sgorey.UIFramework.Runtime;
 using TMPro;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace Sgorey.Microloans
             {
                 color = _activeColor;
                 _panelToOpen.gameObject.SetActive(true);
+
+                App.FakeWebview.CloseActiveView();
             }
             else
             {
