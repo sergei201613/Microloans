@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Android;
 using static UnityEngine.Android.Permission;
@@ -87,7 +86,7 @@ namespace Sgorey.Microloans.Infrastructure
 
         private void PermissionDenied(string permissionName)
         {
-            _deniedPanel.SetActive(true);
+            //_deniedPanel.SetActive(true);
             Debug.Log($"{permissionName} PermissionCallbacks_PermissionDenied");
         }
 

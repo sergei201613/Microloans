@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,8 @@ namespace Sgorey.Microloans
     {
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private Slider _priceSlider;
+        [SerializeField] private Button _confirmButton;
+        [SerializeField] private GameObject _confirmPanel;
 
         private void Awake()
         {
@@ -17,11 +20,18 @@ namespace Sgorey.Microloans
         private void OnEnable()
         {
             _priceSlider.onValueChanged.AddListener(SetPriceText);
+            _confirmButton.onClick.AddListener(Confirm);
         }
 
         private void OnDisable()
         {
             _priceSlider.onValueChanged.RemoveListener(SetPriceText);
+            _confirmButton.onClick.RemoveListener(Confirm);
+        }
+
+        private void Confirm()
+        {
+            _confirmPanel.SetActive(true);
         }
 
         private void SetPriceText(float value)
