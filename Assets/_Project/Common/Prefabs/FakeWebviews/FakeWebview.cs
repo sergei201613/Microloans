@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +11,18 @@ namespace Sgorey.Microloans
         [SerializeField] private Button _confirmButton;
         [SerializeField] private GameObject _confirmPanel;
 
+        private ScrollRect _scroll;
+
         private void Awake()
         {
+            _scroll = GetComponentInParent<ScrollRect>();
             SetPriceText(_priceSlider.value);
         }
 
         private void OnEnable()
         {
+            _scroll.verticalNormalizedPosition = 1f;
+
             _priceSlider.onValueChanged.AddListener(SetPriceText);
             _confirmButton.onClick.AddListener(Confirm);
         }

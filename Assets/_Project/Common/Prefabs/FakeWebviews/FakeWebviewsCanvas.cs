@@ -15,7 +15,7 @@ namespace Sgorey.Microloans.Common
             App.FakeWebview = this;
         }
 
-        internal void SetActiveView(int viewID)
+        public void SetActiveView(int viewID)
         {
             _container.SetActive(true);
 
@@ -26,7 +26,7 @@ namespace Sgorey.Microloans.Common
             _view.SetActive(true);
         }
 
-        internal void CloseActiveView()
+        public void CloseActiveView()
         {
             _container.SetActive(false);
         }
