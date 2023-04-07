@@ -39,14 +39,12 @@ namespace Sgorey.Microloans
             if (value)
             {
                 color = _activeColor;
-                _panelToOpen.gameObject.SetActive(true);
-
-                App.FakeWebview.CloseActiveView();
+                _panelToOpen.Show();
             }
             else
             {
                 color = _defaultColor;
-                _panelToOpen.gameObject.SetActive(false);
+                _panelToOpen.Hide();
             }
 
             _icon.color = new Color(color.r, color.g, color.b, 1f);
