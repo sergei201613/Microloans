@@ -1,4 +1,5 @@
 ﻿using Sgorey.Microloans.Infrastructure;
+using TMPro;
 using UnityEngine;
 
 namespace Sgorey.Microloans.Common
@@ -7,6 +8,7 @@ namespace Sgorey.Microloans.Common
     {
         [SerializeField] private GameObject[] _views;
         [SerializeField] private GameObject _container;
+        [SerializeField] private TMP_Text _titleText;
 
         private GameObject _view;
 
@@ -15,8 +17,10 @@ namespace Sgorey.Microloans.Common
             App.FakeWebview = this;
         }
 
-        public void SetActiveView(int viewID)
+        public void SetActiveView(int viewID, string title)
         {
+            _titleText.text = title;
+
             _container.SetActive(true);
 
             if (_view != null)

@@ -33,7 +33,7 @@ namespace Sgorey.Microloans
             _confirmButton.onClick.RemoveListener(Confirm);
         }
 
-        private void Confirm()
+        public void Confirm()
         {
             _confirmPanel.SetActive(true);
         }

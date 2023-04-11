@@ -41,7 +41,7 @@ namespace Sgorey.Microloans
 
         private void OpenFakeWebview()
         {
-            App.FakeWebview.SetActiveView(_microloanID);
+            App.FakeWebview.SetActiveView(_microloanID, _mainTitle.text);
         }
 
         private void OpenRealWebview()
