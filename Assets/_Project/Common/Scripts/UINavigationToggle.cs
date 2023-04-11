@@ -1,8 +1,7 @@
-using Sgorey.Microloans.Infrastructure;
-using Sgorey.UIFramework.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Sgorey.Microloans
 {
@@ -13,13 +12,18 @@ namespace Sgorey.Microloans
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Color _defaultColor;
         [SerializeField] private Color _activeColor;
-        [SerializeField] private Panel _panelToOpen;
+        [SerializeField] private MainPanelsContainer _mainPanelsContainer;
+        [SerializeField] private RectTransform _panelContainer;
+        [SerializeField] private Canvas _canvas;
+        [SerializeField] private int _panelPosition = 0;
 
         private Toggle _toggle;
+        private RectTransform _canvasRect;
 
         private void Awake()
         {
             _toggle = GetComponent<Toggle>();
+            _canvasRect = _canvas.GetComponent<RectTransform>();
         }
 
         private void OnEnable()
@@ -39,12 +43,14 @@ namespace Sgorey.Microloans
             if (value)
             {
                 color = _activeColor;
-                _panelToOpen.Show();
+
+                float width = _canvasRect.rect.width;
+                _panelContainer.DOAnchorPosX(-_panelPosition * width, 0.35f);
+                _mainPanelsContainer.Refresh();
             }
             else
             {
                 color = _defaultColor;
-                _panelToOpen.Hide();
             }
 
             _icon.color = new Color(color.r, color.g, color.b, 1f);

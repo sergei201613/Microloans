@@ -41,11 +41,13 @@ namespace Sgorey.Microloans
         private void OnEnable()
         {
             _heartButton.onClick.AddListener(ToggleFavorite);
+            _container.Updated += Refresh;
             UpdateHeartImage();
         }
 
         private void OnDisable()
         {
+            _container.Updated -= Refresh;
             _heartButton.onClick.RemoveListener(ToggleFavorite);
         }
 
@@ -64,6 +66,11 @@ namespace Sgorey.Microloans
         private string GetUniqueKey()
         {
             return $"FavoriteBankInfoPanel_{_id}";
+        }
+
+        private void Refresh()
+        {
+            UpdateHeartImage();
         }
     }
 }
