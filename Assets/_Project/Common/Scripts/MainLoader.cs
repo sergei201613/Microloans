@@ -39,7 +39,7 @@ namespace Sgorey.Microloans.Common
         public static bool IsRuLang()
         {
             // TODO: remove this test thing
-            return false;
+            //return false;
 
             return PlayerPrefs.GetInt(IsRUKey) == 1;
         }

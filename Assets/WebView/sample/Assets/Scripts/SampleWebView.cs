@@ -18,6 +18,7 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
+using Sgorey.UIFramework.Runtime;
 using System.Collections;
 using UnityEngine;
 #if UNITY_2018_4_OR_NEWER
@@ -34,6 +35,7 @@ public class SampleWebView : MonoBehaviour
     IEnumerator Start()
     {
         webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
+        //webViewObject.gameObject.AddComponent<Panel>();
         webViewObject.Init(
             cb: (msg) =>
             {
@@ -148,7 +150,12 @@ public class SampleWebView : MonoBehaviour
 
         //webViewObject.SetScrollbarsVisibility(true);
 
-        webViewObject.SetMargins(0, 150, 0, 0);
+        webViewObject.SetMargins(0, 83, 0, 0);
+
+        // TODO:
+        //webViewObject.SetCenterPositionWithScale(,,);
+        //webViewObject.GetComponent<Panel>().Open(true);
+
         webViewObject.SetTextZoom(100);  // android only. cf. https://stackoverflow.com/questions/21647641/android-webview-set-font-size-system-default/47017410#47017410
         webViewObject.SetVisibility(true);
 

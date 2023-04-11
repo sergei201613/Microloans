@@ -1,11 +1,12 @@
 using Sgorey.Microloans.Common;
 using Sgorey.Microloans.Infrastructure;
+using Sgorey.UIFramework.Runtime;
 using TMPro;
 using UnityEngine;
 
 namespace Sgorey.Microloans
 {
-    public class MicroloanDescriptionPanel : MonoBehaviour
+    public class MicroloanDescriptionPanel : Panel
     {
         [SerializeField] private SampleWebView _webViewPrefab;
         [SerializeField] private Transform _infoContainer;

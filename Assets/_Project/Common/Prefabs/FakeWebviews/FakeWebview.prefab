@@ -717,6 +717,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0f30010cebf964f9c5102dffa20c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backButton: {fileID: 0}
+  _isVerticalAnim: 0
+  _canvasRect: {fileID: 0}
+  _rectTransform: {fileID: 339312222014452571}
   _priceText: {fileID: 7158906213187182873}
   _priceSlider: {fileID: 2380305044105281189}
   _confirmButton: {fileID: 7596762459922563135}

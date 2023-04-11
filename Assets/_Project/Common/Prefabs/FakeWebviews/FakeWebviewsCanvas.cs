@@ -1,4 +1,5 @@
 ﻿using Sgorey.Microloans.Infrastructure;
+using Sgorey.UIFramework.Runtime;
 using TMPro;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Sgorey.Microloans.Common
         {
             _titleText.text = title;
 
-            _container.SetActive(true);
+            _container.GetComponent<Panel>().Open(true);
 
             if (_view != null)
                 _view.SetActive(false);
@@ -32,7 +33,7 @@ namespace Sgorey.Microloans.Common
 
         public void CloseActiveView()
         {
-            _container.SetActive(false);
+            _container.GetComponent<Panel>().Close(true);
         }
     }
 }

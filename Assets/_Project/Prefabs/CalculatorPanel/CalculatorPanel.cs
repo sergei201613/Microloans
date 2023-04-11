@@ -15,15 +15,17 @@ namespace Sgorey.Microloans
         [SerializeField] private TMP_Text _interestSumText;
         [SerializeField] private TMP_Text _returningText;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _loanAmountField.onValueChanged.AddListener(Calculate);
             _daysField.onValueChanged.AddListener(Calculate);
             _rateField.onValueChanged.AddListener(Calculate);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _loanAmountField.onValueChanged.RemoveListener(Calculate);
             _daysField.onValueChanged.RemoveListener(Calculate);
             _rateField.onValueChanged.RemoveListener(Calculate);
