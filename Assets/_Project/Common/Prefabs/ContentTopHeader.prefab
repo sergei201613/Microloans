@@ -66,9 +66,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u044B\u0431\u0438\u0440\u0430\u0439\u0442\u0435 \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u044B\u0435
-    \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F, \u043E\u0442\u043E\u0431\u0440\u0430\u043D\u043D\u044B\u0435
-    \u0434\u043B\u044F \u0432\u0430\u0441!"
+  m_text: "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C
+    \u0437\u0430\u044F\u0432\u043A\u0443 \u0432 3-4 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438.
+    \u042D\u0442\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0442 \u0448\u0430\u043D\u0441
+    \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0437\u0430\u0439\u043C\u0430
+    \u0434\u043E 100 %"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d9b354f9ab9ebc479d222f7d3384b83, type: 2}
   m_sharedMaterial: {fileID: 9181230205632306134, guid: 9d9b354f9ab9ebc479d222f7d3384b83, type: 2}
@@ -95,11 +97,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 12.55
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 9.78
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -172,8 +174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -16}
-  m_SizeDelta: {x: -32, y: 24}
+  m_AnchoredPosition: {x: -48.0022, y: -16}
+  m_SizeDelta: {x: -128.0043, y: 24}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2954223292716968613
 CanvasRenderer:
@@ -203,7 +205,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041B\u0443\u0447\u0448\u0438\u0435 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F"
+  m_text: "\u041B\u0443\u0447\u0448\u0438\u0435 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u043D\u0430 \u0441\u0435\u0433\u043E\u0434\u043D\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c38acf7ff23d8c48a3e1338b2718699, type: 2}
   m_sharedMaterial: {fileID: -6904840186420157280, guid: 5c38acf7ff23d8c48a3e1338b2718699, type: 2}
@@ -230,11 +233,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 13.1
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1

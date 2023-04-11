@@ -33,11 +33,17 @@ namespace Sgorey.UIFramework.Runtime
         protected float CanvasHeight => CanvasRect.rect.height;
         protected float CanvasWidth => CanvasRect.rect.width;
 
-
         private PanelManager _panelManager;
         private RectTransform _canvasRect;
         private RectTransform _rectTransform;
         private bool _isHiding;
+
+        //private void Update()
+        //{
+        //    var rect = RectTransform.rect;
+        //    rect.width = CanvasWidth;
+        //    _rectTransform.rect.Set(rect.x, rect.y, rect.width, rect.height);
+        //}
 
         public virtual void Init(PanelManager panelManager)
         {
