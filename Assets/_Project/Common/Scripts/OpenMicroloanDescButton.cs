@@ -45,7 +45,7 @@ namespace Sgorey.Microloans.Common
 
         private void OpenSite()
         {
-            DescPanel.Open(true);
+            DescPanel.Open(false);
             DescPanel.Init(_bankInfoPanel.ID);
         }
     }

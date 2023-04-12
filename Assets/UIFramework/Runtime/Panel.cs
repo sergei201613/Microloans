@@ -48,10 +48,10 @@ namespace Sgorey.UIFramework.Runtime
 
         public void Open(bool animate)
         {
+            gameObject.SetActive(true);
+
             if (!animate)
                 return;
-
-            gameObject.SetActive(true);
 
             if (_isVerticalAnim)
                 DoVerticalAnimOpen();
@@ -63,7 +63,7 @@ namespace Sgorey.UIFramework.Runtime
         {
             if (!animate)
             {
-                StartCoroutine(Deactivate());
+                gameObject.SetActive(false);
                 return;
             }
 

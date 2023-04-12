@@ -15,6 +15,7 @@ namespace Sgorey.Microloans
         [SerializeField] private TMP_Text _mainTitle;
 
         private int _microloanID;
+        SampleWebView webView;
 
         public void Init(int microloanID)
         {
@@ -40,6 +41,14 @@ namespace Sgorey.Microloans
             OpenRealWebview();
         }
 
+        public void CloseReaWebviewIfExist()
+        {
+            if (webView == null)
+                return;
+
+            webView.Close();
+        }
+
         private void OpenFakeWebview()
         {
             App.FakeWebview.SetActiveView(_microloanID, _mainTitle.text);
@@ -47,8 +56,8 @@ namespace Sgorey.Microloans
 
         private void OpenRealWebview()
         {
-            SampleWebView ww = Instantiate(_webViewPrefab);
-            ww.Url = App.ServerData.Urls[_microloanID];
+            webView = Instantiate(_webViewPrefab);
+            webView.Url = App.ServerData.Urls[_microloanID];
         }
 
         private void UpdateInfo()

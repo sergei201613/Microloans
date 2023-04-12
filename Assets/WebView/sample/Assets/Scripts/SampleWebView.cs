@@ -18,6 +18,7 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
+using DG.Tweening;
 using Sgorey.UIFramework.Runtime;
 using System.Collections;
 using UnityEngine;
@@ -116,6 +117,7 @@ public class SampleWebView : MonoBehaviour
                     "};");
 #endif
                 webViewObject.EvaluateJS(@"Unity.call('ua=' + navigator.userAgent)");
+                OpenAnimation();
             }
             //transparent: false,
             //zoom: true,
@@ -150,30 +152,31 @@ public class SampleWebView : MonoBehaviour
 
         //webViewObject.SetScrollbarsVisibility(true);
 
-        webViewObject.SetMargins(0, 83, 0, 0);
-
-        // TODO:
-        //webViewObject.SetCenterPositionWithScale(,,);
-        //webViewObject.GetComponent<Panel>().Open(true);
+        UpdateMargins();
 
         webViewObject.SetTextZoom(100);  // android only. cf. https://stackoverflow.com/questions/21647641/android-webview-set-font-size-system-default/47017410#47017410
         webViewObject.SetVisibility(true);
 
 #if !UNITY_WEBPLAYER && !UNITY_WEBGL
-        if (Url.StartsWith("http")) {
+        if (Url.StartsWith("http"))
+        {
             webViewObject.LoadURL(Url.Replace(" ", "%20"));
-        } else {
+        }
+        else
+        {
             var exts = new string[]{
                 ".jpg",
                 ".js",
                 ".html"  // should be last
             };
-            foreach (var ext in exts) {
+            foreach (var ext in exts)
+            {
                 var url = Url.Replace(".html", ext);
                 var src = System.IO.Path.Combine(Application.streamingAssetsPath, url);
                 var dst = System.IO.Path.Combine(Application.persistentDataPath, url);
                 byte[] result = null;
-                if (src.Contains("://")) {  // for Android
+                if (src.Contains("://"))
+                {  // for Android
 #if UNITY_2018_4_OR_NEWER
                     // NOTE: a more complete code that utilizes UnityWebRequest can be found in https://github.com/gree/unity-webview/commit/2a07e82f760a8495aa3a77a23453f384869caba7#diff-4379160fa4c2a287f414c07eb10ee36d
                     var unityWebRequest = UnityWebRequest.Get(src);
@@ -184,11 +187,14 @@ public class SampleWebView : MonoBehaviour
                     yield return www;
                     result = www.bytes;
 #endif
-                } else {
+                }
+                else
+                {
                     result = System.IO.File.ReadAllBytes(src);
                 }
                 System.IO.File.WriteAllBytes(dst, result);
-                if (ext == ".html") {
+                if (ext == ".html")
+                {
                     webViewObject.LoadURL("file://" + dst.Replace(" ", "%20"));
                     break;
                 }
@@ -202,6 +208,41 @@ public class SampleWebView : MonoBehaviour
         }
 #endif
         yield break;
+    }
+
+    public void Close()
+    {
+        Destroy(webViewObject.gameObject);
+        Destroy(gameObject);
+    }
+
+    private void UpdateMargins()
+    {
+        webViewObject.SetMargins(0, TopMargin(), 0, 0);
+    }
+
+    private int TopMargin()
+    {
+        // TODO: remove magic const
+        float ratio = 83f / 812f;
+        return (int)(Screen.height * ratio);
+    }
+
+    private void OpenAnimation()
+    {
+        int x = Screen.width * 2;
+        float topMargin = TopMargin();
+        var scale = new Vector2(Screen.width, Screen.height - topMargin);
+        print(scale);
+        DOTween
+            .To(() => x, val => x = val, 0, 0.35f)
+            .OnUpdate(() =>
+            {
+                var pos = new Vector2(x, -topMargin / 2);
+                webViewObject.SetCenterPositionWithScale(pos, scale);
+
+                print(x);
+            });
     }
 
     void OnGUI()
