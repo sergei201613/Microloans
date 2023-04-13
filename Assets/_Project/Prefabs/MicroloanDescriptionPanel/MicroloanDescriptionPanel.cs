@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Sgorey.Microloans.Common;
 using Sgorey.Microloans.Infrastructure;
 using Sgorey.UIFramework.Runtime;
@@ -13,6 +14,7 @@ namespace Sgorey.Microloans
         [SerializeField] private Transform _headerTitlesContainer;
         [SerializeField] private Transform _imagesContainer;
         [SerializeField] private TMP_Text _mainTitle;
+        [SerializeField] private Panel _webviewAnimPanel;
 
         private int _microloanID;
         SampleWebView webView;
@@ -41,23 +43,30 @@ namespace Sgorey.Microloans
             OpenRealWebview();
         }
 
-        public void CloseReaWebviewIfExist()
+        public void CloseWebviewIfExist()
         {
+            App.FakeWebview.CloseActiveView();
+
             if (webView == null)
                 return;
 
+            // TODO:
+            _webviewAnimPanel.Close(false);
             webView.Close();
         }
 
         private void OpenFakeWebview()
         {
-            App.FakeWebview.SetActiveView(_microloanID, _mainTitle.text);
+            App.FakeWebview.SetActiveView(_microloanID);
         }
 
         private void OpenRealWebview()
         {
-            webView = Instantiate(_webViewPrefab);
-            webView.Url = App.ServerData.Urls[_microloanID];
+            _webviewAnimPanel.Open(true, () =>
+            {
+                webView = Instantiate(_webViewPrefab);
+                webView.Url = App.ServerData.Urls[_microloanID];
+            });
         }
 
         private void UpdateInfo()

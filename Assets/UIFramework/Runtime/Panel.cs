@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using System.Collections;
+using System;
 
 namespace Sgorey.UIFramework.Runtime
 {
@@ -46,7 +46,7 @@ namespace Sgorey.UIFramework.Runtime
             _canvasRect = _panelManager.GetComponent<RectTransform>();
         }
 
-        public void Open(bool animate)
+        public void Open(bool animate, Action onComplete = null)
         {
             gameObject.SetActive(true);
 
@@ -56,7 +56,7 @@ namespace Sgorey.UIFramework.Runtime
             if (_isVerticalAnim)
                 DoVerticalAnimOpen();
             else
-                DoHorizontalAnimOpen();
+                DoHorizontalAnimOpen(onComplete);
         }
 
         public void Close(bool animate)
@@ -75,10 +75,15 @@ namespace Sgorey.UIFramework.Runtime
                 DoHorizontalAnimClose();
         }
 
-        protected virtual void DoHorizontalAnimOpen()
+        protected virtual void DoHorizontalAnimOpen(Action onComplete = null)
         {
             _rectTransform.anchoredPosition = new Vector2(CanvasWidth, 0f);
-            _rectTransform.DOAnchorPosX(0f, animDuration);
+            _rectTransform
+                .DOAnchorPosX(0f, animDuration)
+                .OnComplete(() =>
+                {
+                    onComplete?.Invoke();
+                });
         }
 
         protected virtual void DoHorizontalAnimClose()
@@ -108,12 +113,6 @@ namespace Sgorey.UIFramework.Runtime
         public void Back()
         {
             _panelManager.Back(out var _);
-        }
-
-        private IEnumerator Deactivate()
-        {
-            yield return new WaitForSeconds(2f);
-            gameObject.SetActive(false);
         }
     }
 }

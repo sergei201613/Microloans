@@ -117,7 +117,6 @@ public class SampleWebView : MonoBehaviour
                     "};");
 #endif
                 webViewObject.EvaluateJS(@"Unity.call('ua=' + navigator.userAgent)");
-                OpenAnimation();
             }
             //transparent: false,
             //zoom: true,

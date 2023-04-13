@@ -9,7 +9,6 @@ namespace Sgorey.Microloans.Common
     {
         [SerializeField] private GameObject[] _views;
         [SerializeField] private GameObject _container;
-        [SerializeField] private TMP_Text _titleText;
 
         private GameObject _view;
 
@@ -18,10 +17,8 @@ namespace Sgorey.Microloans.Common
             App.FakeWebview = this;
         }
 
-        public void SetActiveView(int viewID, string title)
+        public void SetActiveView(int viewID)
         {
-            _titleText.text = title;
-
             _container.GetComponent<Panel>().Open(true);
 
             if (_view != null)
@@ -33,7 +30,7 @@ namespace Sgorey.Microloans.Common
 
         public void CloseActiveView()
         {
-            _container.GetComponent<Panel>().Close(true);
+            _container.GetComponent<Panel>().Close(false);
         }
     }
 }
