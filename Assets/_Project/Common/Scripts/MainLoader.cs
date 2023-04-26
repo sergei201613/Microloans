@@ -27,6 +27,8 @@ namespace Sgorey.Microloans.Common
                     UpateLanguageInfo();
             }
 
+            //TODO: wtf!??
+
             if (IsRuLang())
             {
                 AsyncOperationHandle handle = _serverData.LoadAssetAsync<GameObject>();
@@ -69,16 +71,18 @@ namespace Sgorey.Microloans.Common
             }
         }
 
-        private void UpateLanguageInfo()
+        private void UpateLanguageInfo() //TODO
         {
             if (Application.systemLanguage != SystemLanguage.Russian)
             {
                 PlayerPrefs.SetInt(IsRUKey, 0);
+                // TODO: need return?
             }
 
             if (CultureInfo.CurrentCulture.ToString() != "ru-RU")
             {
                 PlayerPrefs.SetInt(IsRUKey, 0);
+                // TODO: need return?
             }
 
             PlayerPrefs.SetInt(IsRUKey, 1);
