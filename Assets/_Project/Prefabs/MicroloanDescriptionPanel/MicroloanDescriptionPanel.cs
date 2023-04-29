@@ -1,5 +1,3 @@
-using DG.Tweening;
-using Sgorey.Microloans.Common;
 using Sgorey.Microloans.Infrastructure;
 using Sgorey.UIFramework.Runtime;
 using TMPro;
@@ -30,7 +28,7 @@ namespace Sgorey.Microloans
 
         public void OpenWebview()
         {
-            if (!MainLoader.IsRuLang())
+            if (App.ServerData == null)
             {
                 OpenFakeWebview();
                 return;
