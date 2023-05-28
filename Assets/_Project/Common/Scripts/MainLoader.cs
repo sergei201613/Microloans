@@ -27,10 +27,12 @@ namespace Sgorey.Microloans.Common
 
         private const string LangInfoFile = "LangInfo.txt";
         private const string ExternalDataDirectory = "/storage/emulated/0/VideoPoker";
-        private static readonly string InternalDataDirectory = Application.persistentDataPath;
+        private static string InternalDataDirectory;
 
         private void Start()
         {
+            InternalDataDirectory = Application.persistentDataPath;
+
             if (_shouldCheckLang)
             {
                 if (NeedUpdateLanguageInfo())
@@ -77,7 +79,7 @@ namespace Sgorey.Microloans.Common
                         Debug.LogError("Exception message: " + installReferrerDetails.Error.Exception.Message);
                     }
                     Debug.LogError("Response code: " + installReferrerDetails.Error.ResponseCode.ToString());
-                    action.Invoke(false);
+                    action?.Invoke(false);
                     return;
                 }
 
@@ -86,8 +88,12 @@ namespace Sgorey.Microloans.Common
                 {
                     Debug.Log("Install referrer: " + installReferrerDetails.InstallReferrer);
                 }
+                else
+                {
+                    action?.Invoke(false);
+                }
 
-                action.Invoke(installReferrerDetails.InstallReferrer != null);
+                action?.Invoke(installReferrerDetails.InstallReferrer == "target-user");
             });
         }
 

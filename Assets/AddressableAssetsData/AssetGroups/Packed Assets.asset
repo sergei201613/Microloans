@@ -18,7 +18,11 @@ MonoBehaviour:
   m_GUID: a9478b8a777391f43b84b46de7a5a09b
   m_SerializeEntries:
   - m_GUID: 6d781937c810ef842af1679865bb572b
-    m_Address: Assets/_Project/Common/Prefabs/ServerData.prefab
+    m_Address: ServerData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21952501d3b6a3e4aa037037c36f7aac
+    m_Address: CheckReferrer
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

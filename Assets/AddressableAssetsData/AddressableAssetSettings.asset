@@ -78,7 +78,7 @@ MonoBehaviour:
       - m_Id: f51c3c96aff3dfe47a897a3c07fa21bd
         m_Value: ServerData/[BuildTarget]
       - m_Id: 1febbdedb054fad4aae0da5de691fe7a
-        m_Value: https://b06ae513-9864-45af-a2e8-d36b3cc4548d.client-api.unity3dusercontent.com/client_api/v1/environments/production/buckets/2eeaaa8c-8689-4af2-9767-5146dda2af79/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: http://microloans/
     m_ProfileEntryNames:
     - m_Id: 85cfcc32d3f29b2499d93ffc9313368a
       m_Name: BuildTarget

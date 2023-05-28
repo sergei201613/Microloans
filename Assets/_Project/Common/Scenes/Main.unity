@@ -598,6 +598,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _checkReferrer:
+    m_AssetGUID: 21952501d3b6a3e4aa037037c36f7aac
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!4 &431421850
 Transform:
   m_ObjectHideFlags: 0
@@ -1544,7 +1549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &936844447
 RectTransform:
   m_ObjectHideFlags: 0
