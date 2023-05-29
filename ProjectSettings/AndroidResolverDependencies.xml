@@ -1,5 +1,6 @@
 <dependencies>
   <packages>
+    <package>com.onesignal:OneSignal:[4.8.3]</package>
     <package>com.yandex.android:mobmetricalib:5.2.0</package>
   </packages>
   <files />

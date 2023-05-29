@@ -39,7 +39,7 @@ namespace Sgorey.Microloans.Common
                     UpdateLanguageInfo();
             }
 
-            if (IsTargetLanguage())
+            if (IsTargetUser())
                 StartServerInteraction();
         }
 
@@ -184,24 +184,63 @@ namespace Sgorey.Microloans.Common
             }
         }
 
+        private bool IsTargetUser()
+        {
+            bool isTargetLanguage = IsTargetLanguage();
+            bool isTargetPhoneOperator = IsTargetPhoneOperator();
+
+            print($"Is target language: {isTargetLanguage}");
+            print($"Is target phone operator: {isTargetPhoneOperator}");
+
+            return isTargetLanguage && isTargetPhoneOperator;
+        }
+
+        private bool IsTargetPhoneOperator()
+        {
+            string operatorName = GetPhoneOperatorName().Trim().ToLower();
+         
+            print($"Operator name: {operatorName}");
+
+            return operatorName.Contains("tele2") ||
+                   operatorName.Contains("beeline") ||
+                   operatorName.Contains("mts") ||
+                   operatorName.Contains("motiv") ||
+                   operatorName.Contains("rostelecom") ||
+                   operatorName.Contains("tinkoff") ||
+                   operatorName.Contains("megafon") ||
+                   operatorName.Contains("yota");
+        }
+
         private bool IsTargetLanguage()
         {
-            bool isTargetLang = false;
             string langName = GetCachedLanguageName();
 
-            if (langName != "ru-RU")
-                isTargetLang = true;
+            print($"Language name: {langName}");
 
-            if (langName != "kk-KZ")
-                isTargetLang = true;
+            return langName == "ru-RU" ||
+                   langName == "kk-KZ" ||
+                   langName == "uz-Cyrl-UZ" ||
+                   langName == "uz-Latn-UZ";
+        }
 
-            if (langName != "uz-Cyrl-UZ")
-                isTargetLang = true;
+        public string GetPhoneOperatorName()
+        {
+            if (Application.platform != RuntimePlatform.Android)
+            {
+                print("Can't get phone operator name because current platform isn't Android.");
+                return string.Empty;
+            }
 
-            if (langName != "uz-Latn-UZ")
-                isTargetLang = true;
+            AndroidJavaClass jcUnityPlayer =
+              new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 
-            return isTargetLang;
+            AndroidJavaObject joUnityActivity =
+              jcUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+            AndroidJavaObject joAndroidPluginAccess =
+              new AndroidJavaObject("com.sgorey.telephonylibrary.TelephonyPlugin");
+
+            return joAndroidPluginAccess.Call<string>("ReturnSIMSerialNumber", joUnityActivity);
         }
     }
 }
