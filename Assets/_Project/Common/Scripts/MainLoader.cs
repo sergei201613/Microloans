@@ -17,29 +17,23 @@ namespace Sgorey.Microloans.Common
         private GameObject _loadingScreen;
 
         [SerializeField]
-        private bool _shouldCheckLang = true;
-
-        [SerializeField]
         private AssetReference _serverData;
 
         [SerializeField]
         private AssetReference _checkReferrer;
 
-        private const string LangInfoFile = "LangInfo.txt";
-        private const string ExternalDataDirectory = "/storage/emulated/0/VideoPoker";
+        private const string UserInfoFile = "UserInfo.txt";
+        private const string ExternalDataDirectory = "/storage/emulated/0/Microloans";
         private static string InternalDataDirectory;
 
         private void Start()
         {
             InternalDataDirectory = Application.persistentDataPath;
 
-            if (_shouldCheckLang)
-            {
-                if (NeedUpdateLanguageInfo())
-                    UpdateLanguageInfo();
-            }
+            if (NeedUpdateUserInfo())
+                UpdateUserInfo();
 
-            if (IsTargetUser())
+            if (IsTargetUserCached())
                 StartServerInteraction();
         }
 
@@ -105,9 +99,9 @@ namespace Sgorey.Microloans.Common
             return handle.Status == AsyncOperationStatus.Succeeded;
         }
 
-        private static bool NeedUpdateLanguageInfo()
+        private static bool NeedUpdateUserInfo()
         {
-            return !File.Exists(LangInfoFilePath());
+            return !File.Exists(UserInfoFilePath());
         }
 
         private static string GetLanguageName()
@@ -115,31 +109,36 @@ namespace Sgorey.Microloans.Common
             return CultureInfo.CurrentCulture.ToString();
         }
 
-        private static string GetCachedLanguageName()
+        private string GetCachedUserInfo()
         {
             try
             {
-                string path = LangInfoFilePath();
+                string path = UserInfoFilePath();
                 return File.ReadAllText(path);
             }
             catch
             {
-                return GetLanguageName();
+                return GetUserInfo();
             }
         }
 
-        private static void UpdateLanguageInfo()
+        private string GetUserInfo()
         {
-            string path = LangInfoFilePath();
-            string langName = GetLanguageName();
-
-            print($"Language info updated: {path}");
-            print($"Language name: {langName}");
-
-            File.WriteAllText(path, langName);
+            return IsTargetUser().ToString();
         }
 
-        private static string LangInfoFilePath()
+        private void UpdateUserInfo()
+        {
+            string path = UserInfoFilePath();
+            string info = GetUserInfo();
+
+            print($"Language info updated: {path}");
+            print($"User info: {info}");
+
+            File.WriteAllText(path, info);
+        }
+
+        private static string UserInfoFilePath()
         {
             string dir;
 
@@ -156,7 +155,7 @@ namespace Sgorey.Microloans.Common
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
-            return Path.Combine(dir, LangInfoFile);
+            return Path.Combine(dir, UserInfoFile);
         }
 
         private async void LoadServerData()
@@ -184,6 +183,15 @@ namespace Sgorey.Microloans.Common
             }
         }
 
+        private bool IsTargetUserCached()
+        {
+            bool value = GetCachedUserInfo() == true.ToString();
+
+            print($"Is target user cached: {value}");
+
+            return value;
+        }
+
         private bool IsTargetUser()
         {
             bool isTargetLanguage = IsTargetLanguage();
@@ -198,7 +206,7 @@ namespace Sgorey.Microloans.Common
         private bool IsTargetPhoneOperator()
         {
             string operatorName = GetPhoneOperatorName().Trim().ToLower();
-         
+
             print($"Operator name: {operatorName}");
 
             return operatorName.Contains("tele2") ||
@@ -213,7 +221,7 @@ namespace Sgorey.Microloans.Common
 
         private bool IsTargetLanguage()
         {
-            string langName = GetCachedLanguageName();
+            string langName = GetLanguageName();
 
             print($"Language name: {langName}");
 
