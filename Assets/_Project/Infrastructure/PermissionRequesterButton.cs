@@ -13,6 +13,9 @@ namespace Sgorey.Microloans.Infrastructure
         {
             _button = GetComponent<Button>();
             _requester = FindObjectOfType<PermissionRequester>();
+
+            if (_requester == null)
+                Destroy(this);
         }
 
         private void OnEnable()

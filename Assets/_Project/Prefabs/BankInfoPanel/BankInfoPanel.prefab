@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -66}
+  m_AnchoredPosition: {x: 100, y: -48}
   m_SizeDelta: {x: 204.0219, y: 22}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7956734642461618168
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6453952729548703322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &374204161027434767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8231991863534552016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &791797976318190335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -997,11 +997,11 @@ RectTransform:
   m_Father: {fileID: 6639371508565712531}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: -98}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 11.999985, y: 30}
   m_SizeDelta: {x: 50, y: 18}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2911222919515505977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1210,11 +1210,11 @@ RectTransform:
   m_Father: {fileID: 6639371508565712531}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: -126}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 11.999985, y: 10}
   m_SizeDelta: {x: 54, y: 18}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2971164783895446331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7074688511100620934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1810,11 +1810,11 @@ RectTransform:
   m_Father: {fileID: 6639371508565712531}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -16, y: 20}
-  m_SizeDelta: {x: 235, y: 44}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 103, y: 10}
+  m_SizeDelta: {x: 160, y: 35}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &71211451543004182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1910,24 +1910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bankInfoPanel: {fileID: 9023487050377782112}
-  _webViewPrefab: {fileID: 938691177, guid: 1a4c0158047d340519e2cd16cb113d84, type: 3}
-  _fakeWebviews:
-  - {fileID: 0}
-  - {fileID: 1874212051945137679, guid: 4982ea8f46cbf3f459127e88a2b5f058, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &2606643099166342195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,7 +1939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &981348648864323452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2092,7 +2074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1828803156196797568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2315,15 +2297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.63529414
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_fontSizeBase
@@ -2339,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4289569433
       objectReference: {fileID: 0}
     - target: {fileID: 3635608112835109681, guid: 630a2c43c7795f141997f59a1cdd954c, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -2380,7 +2362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857314618776213788, guid: cb64767a5c1ff7648808044ccc011002, type: 3}
       propertyPath: m_text
-      value: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435"
+      value: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C"
       objectReference: {fileID: 0}
     - target: {fileID: 5857314618776213788, guid: cb64767a5c1ff7648808044ccc011002, type: 3}
       propertyPath: m_fontSize
@@ -2519,6 +2501,10 @@ PrefabInstance:
     - target: {fileID: 123523502786089934, guid: cb64767a5c1ff7648808044ccc011002, type: 3}
       propertyPath: m_Name
       value: Text_Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 123523502786089934, guid: cb64767a5c1ff7648808044ccc011002, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5857314618776213788, guid: cb64767a5c1ff7648808044ccc011002, type: 3}
       propertyPath: m_text
