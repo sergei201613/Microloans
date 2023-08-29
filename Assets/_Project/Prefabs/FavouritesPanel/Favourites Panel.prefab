@@ -930,6 +930,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6221349167070156612}
     m_Modifications:
+    - target: {fileID: 1582270110305568297, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
+      propertyPath: m_text
+      value: "\u0427\u0442\u043E\u0431\u044B \u0433\u0430\u0440\u0430\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E
+        \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0437\u0430\u0439\u043C,
+        \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C
+        \u0437\u0430\u044F\u0432\u043A\u0443 \u0432 3-4 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438.
+        \u042D\u0442\u043E \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u0442 5 \u043C\u0438\u043D\u0443\u0442."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582270110305568297, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
+      propertyPath: m_fontSize
+      value: 11.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845608645360339709, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -161.3977
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845608645360339709, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 68.7313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845608645360339709, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -64.69884
+      objectReference: {fileID: 0}
     - target: {fileID: 4101804126547854880, guid: 3c4be48c51081d2488af07a300c1bd9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

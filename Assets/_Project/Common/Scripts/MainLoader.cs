@@ -160,12 +160,12 @@ namespace Sgorey.Microloans.Common
 
         private async void LoadServerData()
         {
-            _loadingScreen.SetActive(true);
+            //_loadingScreen.SetActive(true);
 
             var handle = _serverData.LoadAssetAsync<GameObject>();
             await handle.Task;
 
-            _loadingScreen.SetActive(false);
+            //_loadingScreen.SetActive(false);
 
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {

@@ -1,3 +1,5 @@
+using Sgorey.Microloans.Infrastructure;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +10,7 @@ namespace Sgorey.Microloans
     {
         public string Title => _titleText.text;
 
-        public int ID => _id;
+        public int Id => _id;
 
         public bool IsFavorite
         {
@@ -38,17 +40,31 @@ namespace Sgorey.Microloans
 
         private bool _isFavorite;
 
+        private void Awake()
+        {
+            HandleFirstLaunch();
+        }
+
         private void OnEnable()
         {
+            UpdateHeartImage();
+
             _heartButton.onClick.AddListener(ToggleFavorite);
             _container.Updated += Refresh;
-            UpdateHeartImage();
         }
 
         private void OnDisable()
         {
             _container.Updated -= Refresh;
             _heartButton.onClick.RemoveListener(ToggleFavorite);
+        }
+
+        private void HandleFirstLaunch()
+        {
+            if (App.IsFirstLaunch)
+            {
+                IsFavorite = transform.GetSiblingIndex() < 2;
+            }
         }
 
         private void ToggleFavorite()

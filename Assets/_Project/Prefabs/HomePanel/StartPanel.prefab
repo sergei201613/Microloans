@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BankInfoPanelsContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 5795967094724051589, guid: 42ee060ffd2d29942a90287a5100c99d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ee060ffd2d29942a90287a5100c99d, type: 3}
 --- !u!224 &2926984046821785333 stripped
