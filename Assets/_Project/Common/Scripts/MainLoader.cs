@@ -33,7 +33,7 @@ namespace Sgorey.Microloans.Common
             if (NeedUpdateUserInfo())
                 UpdateUserInfo();
 
-            if (IsTargetUserCached())
+            if (IsTargetUser_Cached())
                 StartServerInteraction();
         }
 
@@ -183,7 +183,7 @@ namespace Sgorey.Microloans.Common
             }
         }
 
-        private bool IsTargetUserCached()
+        private bool IsTargetUser_Cached()
         {
             bool value = GetCachedUserInfo() == true.ToString();
 
